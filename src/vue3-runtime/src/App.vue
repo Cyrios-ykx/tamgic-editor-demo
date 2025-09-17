@@ -4,7 +4,6 @@
 
 <template>
   <!-- <uiPage :config="page" ref="pageComp" /> -->
-  test
   <Page v-if="page" :config="page" ref="pageComp"></Page>
 </template>
 
@@ -23,28 +22,40 @@ const page = ref()
 window.magic?.onRuntimeReady({
   /** 当编辑器的dsl对象变化时会调用 */
   updateRootConfig(config: MApp) {
+    console.log('updateRootConfig', config)
+
     root.value = config
   },
 
   /** 当编辑器的切换页面时会调用 */
   updatePageId(id: Id) {
+    console.log('updatePageId', id)
+
     page.value = root.value?.items?.find((item) => item.id === id)
   },
 
   /** 新增组件时调用 */
   add({ config }: UpdateData) {
+    console.log('add', config)
+    console.log(config.type === 'page') //page.value
+
     const parent = config.type === 'page' ? root.value : page.value
+
     parent.items?.push(config)
   },
 
   /** 更新组件时调用 */
   update({ config }: UpdateData) {
-    const index = page.value.items?.findIndex((child: MNode) => child.id === config.id)
-    page.value.items.splice(index, 1, reactive(config))
+    console.log('update', config)
+
+    // const index = page.value.items?.findIndex((child: MNode) => child.id === config.id)
+    // page.value.items.splice(index, 1, reactive(config))
   },
 
   /** 删除组件时调用 */
   remove({ id }: RemoveData) {
+    console.log('remove', id)
+
     const index = page.value.items?.findIndex((child: MNode) => child.id === id)
     page.value.items.splice(index, 1)
   },

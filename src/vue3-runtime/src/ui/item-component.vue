@@ -33,12 +33,14 @@ const style = computed(() => {
     return {}
   }
 
-  const results: Record<string, any> = {}
+  const results: Record<string, unknown> = {}
 
   const whiteList = ['zIndex', 'opacity', 'fontWeight']
   Object.entries(props.config.style).forEach(([key, value]) => {
     if (key === 'backgroundImage') {
-      value && (results[key] = fillBackgroundImage(value))
+      if (value) {
+        results[key] = fillBackgroundImage(value)
+      }
     } else if (key === 'transform' && typeof value !== 'string') {
       results[key] = Object.entries(value as Record<string, string>)
         .map(([transformKey, transformValue]) => {
