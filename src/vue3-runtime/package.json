@@ -16,11 +16,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tmagic/core": "^1.5.11",
+    "@tmagic/stage": "^1.5.11",
     "pinia": "^3.0.3",
     "vue": "^3.5.18",
-    "vue-router": "^4.5.1",
-    "@tmagic/core": "^1.5.11",
-    "@tmagic/stage": "^1.5.11"
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.2",
@@ -35,7 +35,7 @@
     "jiti": "^2.4.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.6.2",
-    "typescript": "~5.8.0",
+    "typescript": "^5.9.2",
     "vite": "^7.0.6",
     "vite-plugin-vue-devtools": "^8.0.0",
     "vue-tsc": "^3.0.4"

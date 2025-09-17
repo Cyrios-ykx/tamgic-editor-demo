@@ -1,39 +1,35 @@
-# vue-project
+# tmagic-editor-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+## 版本
 
-## Recommended IDE Setup
+```sh
+$ pnpm -v
+8.15.7
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+$ npm -v
+11.5.2
 
-## Type Support for `.vue` Imports in TS
+$ node -v
+v22.15.1
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 安装依赖并启动主项目
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 安装依赖并启动editor runtime
 
 ```sh
-npm run build
+npm install
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
 ```sh
-npm run lint
+cd src/vue3-runtime
+npm run dev
 ```
