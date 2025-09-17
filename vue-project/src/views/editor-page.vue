@@ -7,7 +7,7 @@ const value = ref({
   items: [],
 })
 
-const runtimeUrl = 'http://localhost:8087/'
+const runtimeUrl = 'http://localhost:8088/'
 
 const componentGroupList = ref([
   {
